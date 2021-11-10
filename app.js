@@ -13,8 +13,8 @@ axios("https://oilprice.com/oil-price-charts/").then((res) => {
       $($(el).find("td").get(1)).text(),
       $($(el).find("td").get(2)).text(),
       $($(el).find("td").get(3)).text(),
-      $($(el).find("td").get(4)).text().split("(")[0],
-      $($(el).find("td").get(4)).text().split("(")[0]
+      $($(el).find("td").get(4)).text().slice(0, 6),
+      $($(el).find("td").get(4)).text().slice(6)
     );
 
     console.log(oilPrice);
@@ -24,5 +24,3 @@ axios("https://oilprice.com/oil-price-charts/").then((res) => {
     fs.writeFileSync("out.csv", Papa.unparse(elements));
   });
 });
-
-console.log("New line added");
