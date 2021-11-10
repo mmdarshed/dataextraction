@@ -24,3 +24,5 @@ axios("https://oilprice.com/oil-price-charts/").then((res) => {
     fs.writeFileSync("out.csv", Papa.unparse(elements));
   });
 });
+
+console.log("New line added");
